@@ -1462,7 +1462,7 @@
         }
 
         /* ============ Responsive ============ */
-        @media (max-width: 992px) {
+        ```css @media (max-width: 992px) {
             .firstsection {
                 flex-direction: column;
                 padding: 60px 6% 40px;
@@ -1505,15 +1505,48 @@
             }
         }
 
+
         @media (max-width: 900px) {
+
             nav {
                 justify-content: space-between;
-                padding: 0 5%;
+                align-items: center;
+                padding: 10px 5%;
                 position: relative;
+                min-height: 92px;
+                height: auto;
+                box-sizing: border-box;
+            }
+
+            /* Keep portfolio name and full name inside navbar */
+            nav .left {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                min-width: 0;
+                margin: 0;
+                padding: 0;
+                flex: 1;
+            }
+
+            nav .portfolio-name {
+                margin: 0;
+                font-size: clamp(28px, 7vw, 40px);
+                line-height: 1;
+                white-space: nowrap;
+            }
+
+            nav .full-name {
+                margin: 4px 0 0 0;
+                font-size: 14px;
+                line-height: 1.2;
+                white-space: nowrap;
             }
 
             .menu-toggle {
                 display: flex;
+                flex-shrink: 0;
             }
 
             nav .right {
@@ -1522,7 +1555,7 @@
 
             #navLinks {
                 position: absolute;
-                top: 80px;
+                top: 100%;
                 left: 0;
                 right: 0;
                 flex-direction: column;
@@ -1532,6 +1565,7 @@
                 overflow: hidden;
                 box-shadow: 0 15px 30px rgba(0, 0, 0, .4);
                 transition: max-height .4s var(--ease);
+                z-index: 1000;
             }
 
             #navLinks.open {
@@ -1553,7 +1587,23 @@
             }
         }
 
+
         @media (max-width: 640px) {
+
+            nav {
+                min-height: 88px;
+                padding: 9px 5%;
+            }
+
+            nav .portfolio-name {
+                font-size: clamp(26px, 8vw, 36px);
+                line-height: 1;
+            }
+
+            nav .full-name {
+                font-size: 13px;
+                margin-top: 4px;
+            }
 
             .highlight,
             .highlight-1 {
@@ -1606,6 +1656,7 @@
             }
         }
 
+
         @media (prefers-reduced-motion: reduce) {
             html {
                 scroll-behavior: auto;
@@ -1620,6 +1671,8 @@
                 scroll-behavior: auto !important;
             }
         }
+
+        ```
     </style>
 
 
